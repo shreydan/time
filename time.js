@@ -4,9 +4,12 @@ function updateTime() {
 	var mins = time.getMinutes();
 	var meridian = "AM";
 
-	if (hours > 12) {
+	if (hours > 11) {
 		hours -= 12;
 		meridian = "PM"
+	}
+	
+	if (hours > 19) {
 		document.body.style.backgroundColor = "black";
 		document.getElementById("time").style.color = "white";
 		document.getElementById("today").style.color = "white";
@@ -40,9 +43,9 @@ function updateToday() {
 function updateAll() {
 	updateTime();
 	updateToday();
+	console.log("tick tock");
 }
 
 
 updateAll();
-setInterval(updateAll,1000); 
-	
+setInterval(updateAll,1000);
